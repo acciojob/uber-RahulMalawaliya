@@ -73,9 +73,13 @@ public class CustomerServiceImpl implements CustomerService {
 		booking.setToLocation(toLocation);
 		booking.setStatus(TripStatus.CONFIRMED);
 		tripBookingRepository2.save(booking);
-		List<TripBooking> bookings=tripBookingRepository2.findAll();
+		List<TripBooking> bookings=driver.getBooking();
 		bookings.add(booking);
 		driver.setBooking(bookings);
+		Customer customer=customerRepository2.findById(customerId).get();
+		List<TripBooking> bookings2=customer.getTrips();
+		bookings2.add(booking);
+		customerRepository2.save(customer);
 		driverRepository2.save(driver);
 		
 		return booking;
