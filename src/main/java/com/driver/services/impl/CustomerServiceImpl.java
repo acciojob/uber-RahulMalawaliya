@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements CustomerService {
 			}
 		}
 		TripBooking booking=new TripBooking();
-		booking.setDistanceinKm(distanceInKm);
+		booking.setDistanceInKm(distanceInKm);
 		booking.setCustomer(customerRepository2.findById(customerId).get());
 		booking.setFromLocation(fromLocation);
 		booking.setToLocation(toLocation);

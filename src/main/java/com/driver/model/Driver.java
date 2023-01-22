@@ -31,12 +31,12 @@ public class Driver
 	@OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
 	private List<TripBooking> booking;
 
-	public int getDriverid() {
+	public int getDriverId() {
 		return DriverId;
 	}
 
-	public void setDriverid(int driverid) {
-		DriverId = driverid;
+	public void setDriverId(int driverId) {
+		DriverId = driverId;
 	}
 
 	public String getMobile() {
@@ -71,9 +71,9 @@ public class Driver
 		this.booking = booking;
 	}
 
-	public Driver(int driverid, String mobile, String password, Cab cab, List<TripBooking> booking) {
+	public Driver(int driverId, String mobile, String password, Cab cab, List<TripBooking> booking) {
 		super();
-		DriverId = driverid;
+		DriverId = driverId;
 		Mobile = mobile;
 		Password = password;
 		this.cab = cab;
@@ -84,8 +84,7 @@ public class Driver
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	
 	
 }
