@@ -12,7 +12,7 @@ public class Admin
 
 	@Id
 	@GeneratedValue(strategy = GenerationType. AUTO)
-	private int Adminid;
+	private int AdminId;
 	
 	private String username;
 	
@@ -26,17 +26,17 @@ public class Admin
 
 	public Admin(int id, String username, String password) {
 		super();
-		this.Adminid = id;
+		this.AdminId = id;
 		this.username = username;
 		this.password = password;
 	}
 
 	public int getId() {
-		return Adminid;
+		return AdminId;
 	}
 
 	public void setId(int id) {
-		this.Adminid = id;
+		this.AdminId = id;
 	}
 
 	public String getUsername() {

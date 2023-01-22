@@ -24,7 +24,7 @@ public class TripBooking
 	
 	private String ToLocation;
 	
-	private int DistanceinKm;
+	private int DistanceInKm;
 	
 	@Enumerated
 	private TripStatus status;
@@ -72,11 +72,11 @@ public class TripBooking
 	}
 
 	public int getDistanceinKm() {
-		return DistanceinKm;
+		return DistanceInKm;
 	}
 
 	public void setDistanceinKm(int distanceinKm) {
-		DistanceinKm = distanceinKm;
+		DistanceInKm = distanceinKm;
 	}
 
 	public TripStatus getStatus() {
@@ -117,7 +117,7 @@ public class TripBooking
 		TripBookingId = tripBookingId;
 		this.fromLocation = fromLocation;
 		ToLocation = toLocation;
-		DistanceinKm = distanceinKm;
+		DistanceInKm = distanceinKm;
 		this.status = status;
 		this.bill = bill;
 		this.driver = driver;

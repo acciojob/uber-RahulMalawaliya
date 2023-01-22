@@ -17,7 +17,7 @@ public class Customer
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Customerid;
+	private int CustomerId;
 	
 	private String Mobile;
 	
@@ -27,11 +27,11 @@ public class Customer
 	private List<TripBooking> trips;
 
 	public int getCustomerid() {
-		return Customerid;
+		return CustomerId;
 	}
 
 	public void setCustomerid(int customerid) {
-		Customerid = customerid;
+		CustomerId = customerid;
 	}
 
 	public String getMobile() {
@@ -60,7 +60,7 @@ public class Customer
 
 	public Customer(int customerid, String mobile, String password, List<TripBooking> trips) {
 		super();
-		Customerid = customerid;
+		CustomerId = customerid;
 		Mobile = mobile;
 		Password = password;
 		this.trips = trips;

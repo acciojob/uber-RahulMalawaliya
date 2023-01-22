@@ -18,7 +18,7 @@ public class Driver
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Driverid;
+	private int DriverId;
 	
 	private String Mobile;
 	
@@ -32,11 +32,11 @@ public class Driver
 	private List<TripBooking> booking;
 
 	public int getDriverid() {
-		return Driverid;
+		return DriverId;
 	}
 
 	public void setDriverid(int driverid) {
-		Driverid = driverid;
+		DriverId = driverid;
 	}
 
 	public String getMobile() {
@@ -73,7 +73,7 @@ public class Driver
 
 	public Driver(int driverid, String mobile, String password, Cab cab, List<TripBooking> booking) {
 		super();
-		Driverid = driverid;
+		DriverId = driverid;
 		Mobile = mobile;
 		Password = password;
 		this.cab = cab;
