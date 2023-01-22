@@ -17,26 +17,13 @@ public class Admin
 	private String username;
 	
 	private String password;
-	
-	
-	public Admin() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public Admin(int id, String username, String password) {
-		super();
-		this.AdminId = id;
-		this.username = username;
-		this.password = password;
-	}
-
-	public int getId() {
+	public int getAdminId() {
 		return AdminId;
 	}
 
-	public void setId(int id) {
-		this.AdminId = id;
+	public void setAdminId(int adminId) {
+		AdminId = adminId;
 	}
 
 	public String getUsername() {
@@ -55,5 +42,18 @@ public class Admin
 		this.password = password;
 	}
 
+	public Admin(int adminId, String username, String password) {
+		super();
+		AdminId = adminId;
+		this.username = username;
+		this.password = password;
+	}
+
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 }

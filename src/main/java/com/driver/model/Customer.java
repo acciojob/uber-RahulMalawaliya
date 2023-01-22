@@ -26,12 +26,12 @@ public class Customer
 	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
 	private List<TripBooking> trips;
 
-	public int getCustomerid() {
+	public int getCustomerId() {
 		return CustomerId;
 	}
 
-	public void setCustomerid(int customerid) {
-		CustomerId = customerid;
+	public void setCustomerId(int customerId) {
+		CustomerId = customerId;
 	}
 
 	public String getMobile() {
@@ -58,9 +58,9 @@ public class Customer
 		this.trips = trips;
 	}
 
-	public Customer(int customerid, String mobile, String password, List<TripBooking> trips) {
+	public Customer(int customerId, String mobile, String password, List<TripBooking> trips) {
 		super();
-		CustomerId = customerid;
+		CustomerId = customerId;
 		Mobile = mobile;
 		Password = password;
 		this.trips = trips;
@@ -70,6 +70,6 @@ public class Customer
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	
 }
