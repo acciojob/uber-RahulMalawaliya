@@ -53,7 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public TripBooking bookTrip(int customerId, String fromLocation, String toLocation, int distanceInKm) throws Exception{
-		Driver driver=new Driver();
+		Driver driver=null;
 		for(Driver driver2:driverRepository2.findAll())
 		{
 			if(driver2.getCab().getAvailable()==true)
