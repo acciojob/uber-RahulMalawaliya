@@ -1,90 +1,72 @@
 package com.driver.model;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
 @Table
-public class Driver
-{
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int DriverId;
-	
-	private String Mobile;
-	
-	private String Password;
-	
-	@OneToOne
-	@JoinColumn
-	private Cab cab;
-	
-	@OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
-	private List<TripBooking> TripBookingList;
+public class Driver {
 
-	public int getDriverId() {
-		return DriverId;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int driverId;
 
-	public void setDriverId(int driverId) {
-		DriverId = driverId;
-	}
+    private String mobile;
 
-	public String getMobile() {
-		return Mobile;
-	}
+    private String password;
 
-	public void setMobile(String mobile) {
-		Mobile = mobile;
-	}
+    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
+    private Cab cab;
 
-	public String getPassword() {
-		return Password;
-	}
+    @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
+    private List<TripBooking> tripBookingList = new ArrayList<>();
 
-	public void setPassword(String password) {
-		Password = password;
-	}
+    public Driver() {
+    }
 
-	public Cab getCab() {
-		return cab;
-	}
+    public Driver(String mobile, String password) {
+        this.mobile = mobile;
+        this.password = password;
+    }
 
-	public void setCab(Cab cab) {
-		this.cab = cab;
-	}
+    public int getDriverId() {
+        return driverId;
+    }
 
-	public List<TripBooking> getTripBookingList() {
-		return TripBookingList;
-	}
+    public void setDriverId(int driverId) {
+        this.driverId = driverId;
+    }
 
-	public void setTripBookingList(List<TripBooking> booking) {
-		this.TripBookingList = booking;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public Driver(int driverId, String mobile, String password, Cab cab, List<TripBooking> booking) {
-		super();
-		DriverId = driverId;
-		Mobile = mobile;
-		Password = password;
-		this.cab = cab;
-		this.TripBookingList = booking;
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-	public Driver() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	
-	
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Cab getCab() {
+        return cab;
+    }
+
+    public void setCab(Cab cab) {
+        this.cab = cab;
+    }
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
+    }
 }
