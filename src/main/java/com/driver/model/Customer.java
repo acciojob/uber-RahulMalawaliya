@@ -1,75 +1,61 @@
 package com.driver.model;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
 @Table
-public class Customer
-{
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int CustomerId;
-	
-	private String Mobile;
-	
-	private String Password;
-	
-	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-	private List<TripBooking> TripBookings;
+public class Customer {
 
-	public int getCustomerId() {
-		return CustomerId;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int customerId;
 
-	public void setCustomerId(int customerId) {
-		CustomerId = customerId;
-	}
+    private String mobile;
 
-	public String getMobile() {
-		return Mobile;
-	}
+    private String password;
 
-	public void setMobile(String mobile) {
-		Mobile = mobile;
-	}
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<TripBooking> tripBookings = new ArrayList<>();
 
-	public String getPassword() {
-		return Password;
-	}
+    public Customer() {
+    }
 
-	public void setPassword(String password) {
-		Password = password;
-	}
+    public Customer(String mobile, String password) {
+        this.mobile = mobile;
+        this.password = password;
+    }
 
-	public List<TripBooking> getTripBookings() {
-		return TripBookings;
-	}
+    public int getCustomerId() {
+        return customerId;
+    }
 
-	public void setTripBookings(List<TripBooking> trips) {
-		this.TripBookings = trips;
-	}
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
 
-	public Customer(int customerId, String mobile, String password, List<TripBooking> trips) {
-		super();
-		CustomerId = customerId;
-		Mobile = mobile;
-		Password = password;
-		this.TripBookings = trips;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-	
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<TripBooking> getTripBookings() {
+        return tripBookings;
+    }
+
+    public void setTripBookings(List<TripBooking> tripBookings) {
+        this.tripBookings = tripBookings;
+    }
 }
